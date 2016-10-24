@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListApp">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Shopping List Check Off</h1>
+
+    <div class="row">
+      <!-- To Buy List -->
+      <div class="col-xs-6" ng-controller="ToBuyShoppingController as toBuyCtrl">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">To Buy:</h2>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in toBuyCtrl.toBuy">
+                <span>Buy {{item.quantity}} {{item.item}}</span>
+                <span class="pull-right-md">
+                  <button class="btn btn-success btn-xs" ng-click="toBuyCtrl.buyItem($index)">
+                    <span class="glyphicon glyphicon-ok"></span> Buy
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <div class="emptyMessage text-center" ng-if="toBuyCtrl.toBuy.length === 0">
+              Everything is bought!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bought List -->
+      <div class="col-xs-6" ng-controller="AlreadyBoughtShoppingController as boughtCtrl">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Already Bought:</h2>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in boughtCtrl.bought">
+                <span>Bought {{item.quantity}} {{item.item}}</span>
+                <span class="pull-right-md">
+                  <button class="btn btn-danger btn-xs" ng-click="boughtCtrl.unBuyItem($index)">
+                    <span class="glyphicon glyphicon-remove"></span> Un-buy
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <div class="emptyMessage text-center" ng-if="boughtCtrl.bought.length === 0">
+              Nothing bought yet!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

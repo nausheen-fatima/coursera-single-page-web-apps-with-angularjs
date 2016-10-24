@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="col-lg-12 table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short Name</th>
+      <th>Description</th>
+      <th class="text-right">Price (large)</th>
+      <th class="text-right">Price (small)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in $ctrl.items">
+      <td>{{item.name}}</td>
+      <td>{{item.short_name}}</td>
+      <td>{{item.description}}</td>
+      <td class="text-right">{{item.price_large | currency}}</td>
+      <td class="text-right">{{item.price_small | currency}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

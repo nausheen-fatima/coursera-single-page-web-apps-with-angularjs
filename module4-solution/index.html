@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Chinese Restaurant Menu App</title>
+</head>
+<body ng-app="MenuApp">
+
+  <h1 align="center">Welcome to our Restaurant!</h1>
+
+  <loadingspinner></loadingspinner>
+
+  <ui-view></ui-view>
+
+  <!-- Libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/data/data.module.js"></script>
+  <script src="src/spinner/spinner.module.js"></script>
+  <script src="src/menu/menuapp.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- Menu data-->
+  <script src="src/data/menudata.constants.js"></script>
+  <script src="src/data/menudata.service.js"></script>
+
+  <!-- Spinner -->
+  <script src="src/spinner/loadingspinner.component.js"></script>
+
+  <!-- Menu app -->
+  <script src="src/menu/categories.component.js"></script>
+  <script src="src/menu/categories.controller.js"></script>
+  <script src="src/menu/items.component.js"></script>
+  <script src="src/menu/items.controller.js"></script>
+
+</body>
+</html>

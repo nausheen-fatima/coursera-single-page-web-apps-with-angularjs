@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app="NarrowItDownApp">
+  <div class="container" ng-controller='NarrowItDownController as list'>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+    
+    <div class="form-group">
+      <input type="text" ng-model="list.searchTerm" ng-keypress="list.searchByKey($event);" placeholder="search term" class="form-control">
+    
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="list.search();">Narrow It Down For Me!</button>
+    </div>
+
+    <!-- Bonus loader (see Bonus section of the assignment) -->
+    <items-loader-indicator></items-loader-indicator>
+
+    <div style="clear:both">
+
+    <!-- found-items should be implemented as a component -->
+    <found-items found-items="list.found" is-empty="list.isEmpty" on-remove="list.removeItem(itemId)"></found-items>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/narrow/narrow.module.js"></script>
+  <script src="src/loader/itemsloaderindicator.module.js"></script>
+
+  <!-- 'NarrowItDownApp' module artifacts -->
+  <script src="src/narrow/narrow.controller.js"></script>
+  <script src="src/narrow/menusearch.service.js"></script>
+  <script src="src/narrow/founditems.component.js"></script>
+
+  <!-- 'ItemsLoaderIndicator' module artifacts -->
+  <script src="src/loader/itemsloaderindicator.component.js"></script>
+
+</body>
+</html>
