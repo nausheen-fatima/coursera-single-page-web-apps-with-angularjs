@@ -31,7 +31,7 @@
         <div class="col-sm-10">
           <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" ng-model="supCtrl.signup.email" required>
           <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
-            Must be a valid email address: person@domain.com format
+           Must be a valid email address: handle@domain.com format
           </span>          
         </div>
       </div>
@@ -50,9 +50,9 @@
         <label for="favoritedish" class="col-sm-2 control-label">Favorite Dish*</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="favoritedish" name="favoritedish" placeholder="Enter Menu Number" ng-model="supCtrl.signup.favoritedish" required>
-          <span ng-if="supCtrl.cantGetItem">No such menu number exists</span>
+          <span ng-if="supCtrl.cantGetItem">No such Menu Number exists</span>
      	  <span ng-if="signupForm.favoritedish.$error.required && signupForm.favoritedish.$touched">
-     	  Please enter menu number of your favorite dish
+     	  Menu Number is required
      	  </span>
         </div>
       </div>      
